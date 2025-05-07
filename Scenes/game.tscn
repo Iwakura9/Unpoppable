@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://btamag6u23ige"]
+
+[ext_resource type="Texture2D" uid="uid://cia5qsc3juar8" path="res://Assets/Small Forest Asset Pack/Ground tileset/Ground.png" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://b0hi2g27tfg1n" path="res://Scenes/balum.tscn" id="2_wrm1d"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Balum" parent="." instance=ExtResource("2_wrm1d")]
+position = Vector2(152, 77)
+
+[node name="Camera2D" type="Camera2D" parent="Balum"]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(32, 32)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("1_qxrlw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 512, 512)
