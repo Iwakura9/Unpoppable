@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://tn12u2i2s25a"]
+
+[ext_resource type="Texture2D" uid="uid://dvv8fe8381se" path="res://Assets/Monkey/loose sprites.png" id="1_wvec4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4xmh"]
+atlas = ExtResource("1_wvec4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls87w"]
+atlas = ExtResource("1_wvec4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46f5w"]
+atlas = ExtResource("1_wvec4")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yhf4"]
+atlas = ExtResource("1_wvec4")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m4thw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4xmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls87w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46f5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yhf4")
+}],
+"loop": true,
+"name": &"run_down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run_right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run_up",
+"speed": 5.0
+}]
+
+[node name="Macaco" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m4thw")
+animation = &"run_right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
