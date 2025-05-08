@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0hi2g27tfg1n"]
 
 [ext_resource type="Texture2D" uid="uid://basfpx6w054jg" path="res://Assets/Aseprite/Balum-bandana.png" id="1_e3dgi"]
-[ext_resource type="Script" uid="uid://5g6lg4s0dc8r" path="res://Scenes/balum.gd" id="1_xjs67"]
+[ext_resource type="Script" uid="uid://6ch7cc5feefd" path="res://Scripts/balum.gd" id="1_xjs67"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xjs67"]
 radius = 5.0
 height = 14.0
 
-[node name="Balum" type="CharacterBody2D"]
+[node name="Balum" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_xjs67")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
