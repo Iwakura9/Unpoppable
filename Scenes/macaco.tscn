@@ -278,7 +278,7 @@ script = ExtResource("1_c4xmh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m4thw")
-animation = &"run_UR"
+animation = &"run_DL"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.75)

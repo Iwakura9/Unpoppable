@@ -19,6 +19,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 512, 512)
 
 [node name="Macaco" parent="." instance=ExtResource("3_wrm1d")]
+position = Vector2(-165, 63)
 
 [node name="Balum" parent="." instance=ExtResource("2_wrm1d")]
 position = Vector2(152, 77)
