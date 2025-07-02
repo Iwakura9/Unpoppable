@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5w36j4wksi7u"]
+
+[ext_resource type="Script" uid="uid://df71s6vx4ng6b" path="res://Scripts/revolver.gd" id="1_ncs2m"]
+[ext_resource type="Texture2D" uid="uid://c2pvksfp6tqvu" path="res://Assets/1.png" id="2_ldl0s"]
+
+[node name="Revolver" type="Node2D"]
+script = ExtResource("1_ncs2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ldl0s")
+region_enabled = true
+region_rect = Rect2(80, 118, 15, 10)
+
+[node name="ponta" type="Node2D" parent="."]

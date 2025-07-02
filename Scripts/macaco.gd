@@ -3,6 +3,11 @@ extends CharacterBody2D
 @export var speed: float = 60
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("Player")
+@export var vida = 50.0
+
+func _ready() -> void:
+	add_to_group("macaco")
+	print("Macaco", name, "instanciado em", global_position)
 
 func _physics_process(delta: float) -> void:
 	if player:
@@ -42,3 +47,8 @@ func animate(direction: Vector2) -> void:
 	# Toca a animação se ela não já estiver tocando
 	if sprite.animation != animation_name:
 		sprite.play(animation_name)
+
+func take_damage(damage):
+	vida -= damage
+	if vida <= 0:
+		queue_free()

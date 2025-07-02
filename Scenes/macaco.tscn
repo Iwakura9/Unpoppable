@@ -273,7 +273,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqof6"]
 size = Vector2(12, 15.5)
 
-[node name="Macaco" type="CharacterBody2D"]
+[node name="Macaco" type="CharacterBody2D" groups=["macaco"]]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_c4xmh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
