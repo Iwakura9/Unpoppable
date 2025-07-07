@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed: float = 60
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("Player")
-@export var vida = 50.0
+@export var vida = 100.0
 
 func _ready() -> void:
 	add_to_group("macaco")
@@ -48,7 +48,22 @@ func animate(direction: Vector2) -> void:
 	if sprite.animation != animation_name:
 		sprite.play(animation_name)
 
-func take_damage(damage):
+func take_damage(damage: float) -> void:
 	vida -= damage
+	$AnimatedSprite2D.modulate = Color.RED
+	
+	# timer
+	var timer = Timer.new()
+	timer.wait_time = 0.2
+	timer.one_shot = true
+	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
+	add_child(timer)
+	timer.start()
+	
 	if vida <= 0:
 		queue_free()
+	else:
+		position += -velocity*0.2
+		
+func _on_timer_timeout() -> void:
+	$AnimatedSprite2D.modulate = Color.WHITE
