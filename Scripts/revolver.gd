@@ -1,17 +1,19 @@
 extends Node2D
 
-@onready var sprite = $Sprite2D
+@onready var sprite = $AnimatedSprite2D
 @onready var ponta = $ponta
+@onready var sparks = $ponta/EfeitoTiro
 @export var revolver_distance = 20.0  # Distância do revolver ao centro do jogador
 @export var bullet_scene = preload("res://Scenes/bullet.tscn")
 @export var fire_rate = 0.25
 @export var auto_fire = false
-@export var fire_timer = 0.1
+var fire_timer = fire_rate
 
 func _ready():
 	# Posiciona o sprite do revolver a uma distância fixa do centro
 	sprite.position = Vector2(revolver_distance, 0)
-	$ponta.position = Vector2(revolver_distance + 7.0, 3.0)
+	$ponta.position = Vector2(revolver_distance + 5.0, 3.0)
+	sparks.visible = false
 
 func _process(delta):
 	# Obtém a posição do mouse e calcula a direção
@@ -21,10 +23,10 @@ func _process(delta):
 	# Aplica a rotação ao nó Revolver
 	rotation = direction.angle()
 	if direction.x < 0:
-		$Sprite2D.flip_v = true
+		sprite.flip_v = true
 		$ponta.position = Vector2(revolver_distance + 7.0, 3.0)
 	else:
-		$Sprite2D.flip_v = false
+		sprite.flip_v = false
 		$ponta.position = Vector2(revolver_distance + 7.0, -3.0)
 	
 	fire_timer -= delta
@@ -40,6 +42,12 @@ func _process(delta):
 			
 			
 func fire_bullet(direction):
+	sparks.stop()
+	sprite.stop()
+	sparks.visible = true
+	sparks.play("efeito")
+	sprite.play("shoot")
+	
 	var bullet = bullet_scene.instantiate()
 	bullet.position = ponta.global_position  # Começa na posição do muzzle
 	bullet.direction = direction

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://btamag6u23ige"]
+[gd_scene load_steps=11 format=3 uid="uid://btamag6u23ige"]
 
 [ext_resource type="Texture2D" uid="uid://b7xbhyqdjqf28" path="res://Assets/RPG Nature Tileset.png" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://b0hi2g27tfg1n" path="res://Scenes/balum.tscn" id="2_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://tn12u2i2s25a" path="res://Scenes/macaco.tscn" id="3_wrm1d"]
+[ext_resource type="Script" uid="uid://bu2vwmvpf0qbu" path="res://Scripts/spawner.gd" id="4_3dryh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("1_wrm1d")
@@ -102,6 +103,8 @@ shape = SubResource("WorldBoundaryShape2D_wowpa")
 shape = SubResource("WorldBoundaryShape2D_i6g32")
 
 [node name="Macaco" parent="." instance=ExtResource("3_wrm1d")]
-vida = 1000.0
 
 [node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("4_3dryh")
+spawn_interval = 1.0
+spawn_distance = 320.0

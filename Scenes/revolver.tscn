@@ -1,14 +1,144 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5w36j4wksi7u"]
+[gd_scene load_steps=21 format=3 uid="uid://b5w36j4wksi7u"]
 
 [ext_resource type="Script" uid="uid://df71s6vx4ng6b" path="res://Scripts/revolver.gd" id="1_ncs2m"]
-[ext_resource type="Texture2D" uid="uid://c2pvksfp6tqvu" path="res://Assets/1.png" id="2_ldl0s"]
+[ext_resource type="Texture2D" uid="uid://dyrpg34kxu3c" path="res://Assets/pixel-guns/guns/revolver.png" id="2_ncs2m"]
+[ext_resource type="Texture2D" uid="uid://ofakox6naxgj" path="res://Assets/Particle FX 1.3 Free/Spritesheets/Sparks-Sheet.png" id="3_ldl0s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldl0s"]
+atlas = ExtResource("2_ncs2m")
+region = Rect2(0, 0, 14, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5sga"]
+atlas = ExtResource("2_ncs2m")
+region = Rect2(14, 0, 14, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v37om"]
+atlas = ExtResource("2_ncs2m")
+region = Rect2(28, 0, 14, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nru2u"]
+atlas = ExtResource("2_ncs2m")
+region = Rect2(42, 0, 14, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdxj1"]
+atlas = ExtResource("2_ncs2m")
+region = Rect2(56, 0, 14, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr3gs"]
+atlas = ExtResource("2_ncs2m")
+region = Rect2(70, 0, 14, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2u5o5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldl0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5sga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v37om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nru2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdxj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr3gs")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 20.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u5o5"]
+atlas = ExtResource("3_ldl0s")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb8pp"]
+atlas = ExtResource("3_ldl0s")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rwxb"]
+atlas = ExtResource("3_ldl0s")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx853"]
+atlas = ExtResource("3_ldl0s")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03b68"]
+atlas = ExtResource("3_ldl0s")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71b88"]
+atlas = ExtResource("3_ldl0s")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg8uj"]
+atlas = ExtResource("3_ldl0s")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44d0d"]
+atlas = ExtResource("3_ldl0s")
+region = Rect2(96, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8cvl"]
+atlas = ExtResource("3_ldl0s")
+region = Rect2(192, 192, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1fr46"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u5o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb8pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rwxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx853")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03b68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71b88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg8uj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44d0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8cvl")
+}],
+"loop": false,
+"name": &"efeito",
+"speed": 30.0
+}]
 
 [node name="Revolver" type="Node2D"]
 script = ExtResource("1_ncs2m")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ldl0s")
-region_enabled = true
-region_rect = Rect2(80, 118, 15, 10)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2u5o5")
+animation = &"shoot"
+frame = 5
+frame_progress = 1.0
 
 [node name="ponta" type="Node2D" parent="."]
+
+[node name="EfeitoTiro" type="AnimatedSprite2D" parent="ponta"]
+position = Vector2(13, 1)
+rotation = 0.68766
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_1fr46")
+animation = &"efeito"

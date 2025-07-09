@@ -4,13 +4,14 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("Player")
 @export var vida = 100.0
+var morreu = false
 
 func _ready() -> void:
 	add_to_group("macaco")
 	print("Macaco", name, "instanciado em", global_position)
 
 func _physics_process(delta: float) -> void:
-	if player:
+	if player and not morreu:
 		# Calcula direção do jogador
 		var direction: Vector2 = (player.global_position - global_position).normalized()
 		
@@ -50,7 +51,7 @@ func animate(direction: Vector2) -> void:
 
 func take_damage(damage: float) -> void:
 	vida -= damage
-	$AnimatedSprite2D.modulate = Color.RED
+	sprite.modulate = Color.RED
 	
 	# timer
 	var timer = Timer.new()
@@ -61,9 +62,15 @@ func take_damage(damage: float) -> void:
 	timer.start()
 	
 	if vida <= 0:
-		queue_free()
+		morreu = true
+		sprite.play("morte")
+		velocity = Vector2.ZERO
 	else:
 		position += -velocity*0.2
 		
 func _on_timer_timeout() -> void:
-	$AnimatedSprite2D.modulate = Color.WHITE
+	sprite.modulate = Color.WHITE
+	
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if sprite.animation == "morte":
+		queue_free()
