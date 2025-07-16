@@ -10,7 +10,7 @@ func _ready() -> void:
 	add_to_group("macaco")
 	print("Macaco", name, "instanciado em", global_position)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if player and not morreu:
 		# Calcula direção do jogador
 		var direction: Vector2 = (player.global_position - global_position).normalized()
@@ -53,20 +53,30 @@ func take_damage(damage: float) -> void:
 	vida -= damage
 	sprite.modulate = Color.RED
 	
-	# timer
+	if vida <= 0 and not morreu:
+		$CollisionShape2D.scale = Vector2(0, 0)
+		$Killzone/ataque.scale = Vector2(0, 0)
+		
+		var pitch = randf()*0.5 + 1
+		$BloodSplash.pitch_scale = pitch
+		$BloodSplash.play()
+		
+		morreu = true
+		sprite.play("morte")
+		velocity = Vector2.ZERO
+		
+		Manager.add_kill()
+		print(Manager.kill_count)
+		
+	# timer para ele ficar vermelho
 	var timer = Timer.new()
 	timer.wait_time = 0.2
 	timer.one_shot = true
 	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
 	add_child(timer)
 	timer.start()
-	
-	if vida <= 0:
-		morreu = true
-		sprite.play("morte")
-		velocity = Vector2.ZERO
-	else:
-		position += -velocity*0.2
+	$Hitsound.play()
+	position += -velocity*0.2
 		
 func _on_timer_timeout() -> void:
 	sprite.modulate = Color.WHITE

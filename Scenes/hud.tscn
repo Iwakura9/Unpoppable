@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvihx5qbluspt"]
+
+[ext_resource type="FontFile" uid="uid://cegl0tn0mr2xv" path="res://Assets/Fonts/alagard/alagard.ttf" id="1_e0onf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e0onf"]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 30.0
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="KillCounter" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -61.0
+offset_bottom = 120.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.858824, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_e0onf")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e0onf")
+horizontal_alignment = 2

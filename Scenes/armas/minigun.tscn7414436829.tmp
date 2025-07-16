@@ -1,0 +1,115 @@
+[gd_scene load_steps=17 format=3 uid="uid://bltp5codgypoa"]
+
+[ext_resource type="Script" uid="uid://df71s6vx4ng6b" path="res://Scripts/arma_base.gd" id="1_pfu4v"]
+[ext_resource type="Texture2D" uid="uid://dgsqnutrl6gfp" path="res://Assets/pixel-guns/guns/minigun.png" id="2_jegdk"]
+[ext_resource type="Texture2D" uid="uid://dik16d7onbe73" path="res://Assets/pixel-guns/guns/shot.png" id="3_mejgt"]
+[ext_resource type="AudioStream" uid="uid://cwqavdxa3h8po" path="res://Assets/Audio/mixkit-game-gun-shot-1662.mp3" id="4_3x1wf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfu4v"]
+atlas = ExtResource("2_jegdk")
+region = Rect2(0, 0, 29, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib3jv"]
+atlas = ExtResource("2_jegdk")
+region = Rect2(29, 0, 29, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mejgt"]
+atlas = ExtResource("2_jegdk")
+region = Rect2(58, 0, 29, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x1wf"]
+atlas = ExtResource("2_jegdk")
+region = Rect2(87, 0, 29, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cly01"]
+atlas = ExtResource("2_jegdk")
+region = Rect2(116, 0, 29, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jphqn"]
+atlas = ExtResource("2_jegdk")
+region = Rect2(145, 0, 29, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2u5o5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfu4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib3jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mejgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x1wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cly01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jphqn")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 20.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fr46"]
+atlas = ExtResource("3_mejgt")
+region = Rect2(0, 0, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31ify"]
+atlas = ExtResource("3_mejgt")
+region = Rect2(12, 0, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_877uw"]
+atlas = ExtResource("3_mejgt")
+region = Rect2(24, 0, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v57pj"]
+atlas = ExtResource("3_mejgt")
+region = Rect2(36, 0, 12, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yj2dv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fr46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31ify")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_877uw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v57pj")
+}],
+"loop": false,
+"name": &"efeito",
+"speed": 20.0
+}]
+
+[node name="Minigun" type="Node2D"]
+script = ExtResource("1_pfu4v")
+distance = 22.0
+fire_rate = 0.1
+automatic = true
+ponta_dist_x = 30
+ponta_dist_y = -3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2u5o5")
+animation = &"shoot"
+frame_progress = 1.0
+
+[node name="ponta" type="Node2D" parent="."]
+
+[node name="EfeitoTiro" type="AnimatedSprite2D" parent="ponta"]
+sprite_frames = SubResource("SpriteFrames_yj2dv")
+animation = &"efeito"
+
+[node name="shoot" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(14, 3)
+stream = ExtResource("4_3x1wf")

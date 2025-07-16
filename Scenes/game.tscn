@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://btamag6u23ige"]
+[gd_scene load_steps=13 format=3 uid="uid://btamag6u23ige"]
 
 [ext_resource type="Texture2D" uid="uid://b7xbhyqdjqf28" path="res://Assets/RPG Nature Tileset.png" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://b0hi2g27tfg1n" path="res://Scenes/balum.tscn" id="2_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://tn12u2i2s25a" path="res://Scenes/macaco.tscn" id="3_wrm1d"]
 [ext_resource type="Script" uid="uid://bu2vwmvpf0qbu" path="res://Scripts/spawner.gd" id="4_3dryh"]
+[ext_resource type="AudioStream" uid="uid://dfq1v5aglusby" path="res://Assets/Audio/Bloons Tower Defense EDM Medley ｜ BTD4, BTD5, BTD6.mp3" id="5_wowpa"]
+[ext_resource type="PackedScene" uid="uid://bvihx5qbluspt" path="res://Scenes/hud.tscn" id="6_i6g32"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("1_wrm1d")
@@ -52,7 +54,8 @@ texture = ExtResource("1_wrm1d")
 8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.2673, -3.82357, 12.9045, -3.50494, 12.2673, 8.2844, -11.9487, 9.24029)
 
 [sub_resource type="TileSet" id="TileSet_3dryh"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_wrm1d")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wrm1d"]
@@ -83,9 +86,16 @@ layer_1/tile_data = PackedInt32Array(-9437430, 458752, 3, 1244938, 524288, 0, 77
 [node name="Balum" parent="." instance=ExtResource("2_wrm1d")]
 position = Vector2(152, 77)
 
+[node name="Musica" type="AudioStreamPlayer2D" parent="Balum"]
+position = Vector2(-152, -77)
+stream = ExtResource("5_wowpa")
+volume_db = -10.0
+autoplay = true
+
 [node name="Camera2D" type="Camera2D" parent="Balum"]
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
+position_smoothing_speed = 3.5
 
 [node name="Limits" type="StaticBody2D" parent="."]
 collision_layer = 4
@@ -106,5 +116,5 @@ shape = SubResource("WorldBoundaryShape2D_i6g32")
 
 [node name="Spawner" type="Node2D" parent="."]
 script = ExtResource("4_3dryh")
-spawn_interval = 1.0
-spawn_distance = 320.0
+
+[node name="HUD" parent="." instance=ExtResource("6_i6g32")]

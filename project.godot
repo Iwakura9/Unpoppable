@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Unpoppable"
-run/main_scene="uid://btamag6u23ige"
+run/main_scene="uid://nigf8om7agj3"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Manager="*res://Scripts/manager.gd"
 
 [global_group]
 
