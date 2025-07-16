@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 85
 var is_immune = false
+@onready var arma_atual = get_node("/root/Game/Balum/Revolver")
 
 func _physics_process(_delta):
 	var input_vector = Vector2(
@@ -20,6 +21,15 @@ func take_damage(damage: float) -> void:
 			is_immune = true
 			$TempoImunidade.start()
 			_start_blinking()
+			
+func troca_arma(nova_arma: PackedScene) -> void:
+	if arma_atual:
+		arma_atual.queue_free()
+		
+		
+	arma_atual = nova_arma.instantiate()
+	add_child(arma_atual)
+
 			
 func _start_blinking():
 	var sprite = $Sprite2D

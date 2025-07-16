@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://basfpx6w054jg" path="res://Assets/Aseprite/Balum-bandana.png" id="1_e3dgi"]
 [ext_resource type="Script" uid="uid://6ch7cc5feefd" path="res://Scripts/balum.gd" id="1_xjs67"]
-[ext_resource type="PackedScene" uid="uid://drbq6pw1g02yq" path="res://Scenes/armas/uzi.tscn" id="4_2hlkr"]
+[ext_resource type="PackedScene" uid="uid://b5w36j4wksi7u" path="res://Scenes/armas/revolver.tscn" id="4_2hlkr"]
 [ext_resource type="AudioStream" uid="uid://cgpcmarmsh8h0" path="res://Assets/Audio/mixkit-ballon-blows-up-3071.wav" id="4_hmlof"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xjs67"]
@@ -29,6 +29,6 @@ wait_time = 0.5
 one_shot = true
 autostart = true
 
-[node name="Uzi" parent="." instance=ExtResource("4_2hlkr")]
+[node name="Revolver" parent="." instance=ExtResource("4_2hlkr")]
 
 [connection signal="timeout" from="TempoImunidade" to="." method="_on_tempo_imunidade_timeout"]

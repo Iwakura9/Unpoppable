@@ -58,7 +58,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = -576.0
-offset_top = -322.0
+offset_top = -327.0
 offset_right = 579.0
 offset_bottom = 324.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_48xlc")
@@ -82,23 +82,23 @@ theme_override_constants/separation = 8
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_48xlc")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxFlat_1ehe0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_28flt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_48xlc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
-text = "Começar"
+text = "Start"
 
 [node name="Sair" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_48xlc")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxFlat_1ehe0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_28flt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_48xlc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
-text = "Sair
+text = "Exit
 "
 
 [node name="Label" type="Label" parent="."]

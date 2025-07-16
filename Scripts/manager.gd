@@ -21,7 +21,7 @@ func add_kill() -> void:
 func player_toma_dano() -> void:
 	vidas_player -= 1
 	if vidas_player <= 0:
-		get_tree().reload_current_scene()
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 		reset()
 	
 func atualiza_hud() -> void:
@@ -31,7 +31,20 @@ func atualiza_hud() -> void:
 		animate_font_size(kills)
 	
 func verifica_upgrades(kills: int) -> void:
-	pass
+	var player = get_node("/root/Game/Balum")
+	match kills:
+		15: 
+			player.troca_arma(preload("res://Scenes/armas/pistola.tscn"))
+			spawn_interval = 1.5
+		35:
+			player.troca_arma(preload("res://Scenes/armas/Escopeta.tscn"))
+			spawn_interval = 1
+		60:
+			player.troca_arma(preload("res://Scenes/armas/fuzil.tscn"))
+			spawn_interval = 0.5
+		100:
+			player.troca_arma(preload("res://Scenes/armas/minigun.tscn"))
+			spawn_interval = 0.25
 
 func animate_font_size(label) -> void:
 	var tween = label.create_tween()

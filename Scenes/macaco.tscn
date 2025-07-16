@@ -461,7 +461,8 @@ script = ExtResource("1_c4xmh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m4thw")
-animation = &"morte"
+animation = &"run_DL"
+autoplay = "run_DL"
 
 [node name="Killzone" parent="." instance=ExtResource("4_46f5w")]
 
