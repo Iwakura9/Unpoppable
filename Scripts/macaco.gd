@@ -54,29 +54,34 @@ func take_damage(damage: float) -> void:
 	sprite.modulate = Color.RED
 	
 	if vida <= 0 and not morreu:
-		$CollisionShape2D.scale = Vector2(0, 0)
-		$Killzone/ataque.scale = Vector2(0, 0)
+		mata_macaco()
 		
-		var pitch = randf()*0.5 + 1
-		$BloodSplash.pitch_scale = pitch
-		$BloodSplash.play()
-		
-		morreu = true
-		sprite.play("morte")
-		velocity = Vector2.ZERO
-		
+	else:
+		# timer para ele ficar vermelho
+		var timer = Timer.new()
+		timer.wait_time = 0.2
+		timer.one_shot = true
+		timer.connect("timeout", Callable(self, "_on_timer_timeout"))
+		add_child(timer)
+		timer.start()
+		$Hitsound.play()
+		position += -velocity*0.2
+	
+func mata_macaco() -> void:
+	morreu = true
+	$CollisionShape2D.scale = Vector2(0, 0)
+	$Killzone/ataque.scale = Vector2(0, 0)
+	
+	var pitch = randf()*0.5 + 1
+	$BloodSplash.pitch_scale = pitch
+	$BloodSplash.play()
+	
+	sprite.play("morte")
+	velocity = Vector2.ZERO
+	
+	if Manager.can_player_kill:
 		Manager.add_kill()
 		print(Manager.kill_count)
-		
-	# timer para ele ficar vermelho
-	var timer = Timer.new()
-	timer.wait_time = 0.2
-	timer.one_shot = true
-	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
-	add_child(timer)
-	timer.start()
-	$Hitsound.play()
-	position += -velocity*0.2
 		
 func _on_timer_timeout() -> void:
 	sprite.modulate = Color.WHITE

@@ -1,3 +1,51 @@
-# Godot 4+ specific ignores
+# Ignorações específicas do Godot 4+
 .godot/
-/android/
+
+# Ignorações gerais do Godot
+.import/
+export.cfg
+export_presets.cfg
+
+# Traduções importadas (geradas automaticamente a partir de arquivos CSV)
+*.translation
+
+# Ignorações específicas para projetos Mono (C#)
+.mono/
+data_*/
+mono_crash.*.json
+
+# Arquivos de configuração do editor (geralmente desnecessários para versionamento)
+*.cfg
+
+# Arquivos temporários e de backup
+*~
+*.tmp
+*.bak
+*.swp
+
+# Arquivos específicos de IDEs
+.idea/  # JetBrains IDEs (como Godot Editor com plugins ou IntelliJ)
+.vscode/  # Visual Studio Code
+*.suo  # Visual Studio
+*.user
+*.userosscache
+*.sln.docstates
+*.csproj
+*.sln
+
+# Arquivos de cache e logs
+*.log
+*.cache
+
+# Arquivos de sistema operacional
+.DS_Store  # macOS
+Thumbs.db  # Windows
+desktop.ini  # Windows
+
+# Arquivos de exportação e builds
+export_files/
+*.apk
+*.aab
+*.exe
+*.app
+*.zip

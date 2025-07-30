@@ -115,6 +115,6 @@ stream = ExtResource("4_6ih3y")
 
 [node name="carrega" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_6ih3y")
-volume_db = -8.0
+volume_db = -4.0
 
 [connection signal="finished" from="shoot" to="." method="_on_shoot_finished"]

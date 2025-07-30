@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfq1v5aglusby"
+path="res://.godot/imported/Bloons Tower Defense EDM Medley ∩╜£ BTD4, BTD5, BTD6.mp3-150a8492f13f7ff6e04199abf58dd96b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Bloons Tower Defense EDM Medley ∩╜£ BTD4, BTD5, BTD6.mp3"
+dest_files=["res://.godot/imported/Bloons Tower Defense EDM Medley ∩╜£ BTD4, BTD5, BTD6.mp3-150a8492f13f7ff6e04199abf58dd96b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

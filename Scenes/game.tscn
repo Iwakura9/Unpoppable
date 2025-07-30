@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b0hi2g27tfg1n" path="res://Scenes/balum.tscn" id="2_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://tn12u2i2s25a" path="res://Scenes/macaco.tscn" id="3_wrm1d"]
 [ext_resource type="Script" uid="uid://bu2vwmvpf0qbu" path="res://Scripts/spawner.gd" id="4_3dryh"]
-[ext_resource type="AudioStream" uid="uid://dfq1v5aglusby" path="res://Assets/Audio/Bloons Tower Defense EDM Medley ｜ BTD4, BTD5, BTD6.mp3" id="5_wowpa"]
+[ext_resource type="AudioStream" uid="uid://dfq1v5aglusby" path="res://Assets/Audio/Bloons Tower Defense EDM Medley ∩╜£ BTD4, BTD5, BTD6.mp3" id="5_wowpa"]
 [ext_resource type="PackedScene" uid="uid://bvihx5qbluspt" path="res://Scenes/hud.tscn" id="6_i6g32"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
@@ -89,7 +89,7 @@ position = Vector2(152, 77)
 [node name="Musica" type="AudioStreamPlayer2D" parent="Balum"]
 position = Vector2(-152, -77)
 stream = ExtResource("5_wowpa")
-volume_db = -10.0
+volume_db = -4.0
 autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="Balum"]

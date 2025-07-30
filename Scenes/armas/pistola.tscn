@@ -114,3 +114,4 @@ animation = &"efeito"
 [node name="shoot" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(7, -3)
 stream = ExtResource("4_8u7tr")
+volume_db = -5.0
