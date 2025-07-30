@@ -1,0 +1,9 @@
+CanvasLayer
+Node
+HBoxContainer
+ColorRect
+Button
+VBoxContainer
+Label
+AudioStreamPlayer2D
+AnimatedSprite2D

@@ -1,0 +1,15 @@
+res://Scenes/armas/Escopeta.tscn::b31113fbd0e0a397bf3d24d271328466::1753836339::res://.godot/exported/133200997/export-0e747d8cf7b6b82f5763af6bf0474b84-Escopeta.scn
+res://Scenes/armas/fuzil.tscn::55290c3bfb30720863c070c20c13d20d::1753836339::res://.godot/exported/133200997/export-0c100fb801d94b36e84914c264aa8c6e-fuzil.scn
+res://Scenes/armas/minigun.tscn::759724ae8545c5b500b50fcfc5e10931::1752698923::res://.godot/exported/133200997/export-57fd39264a7d2daaa426968c24002b0a-minigun.scn
+res://Scenes/armas/pistola.tscn::3021bddc5ba90762bce843ce83ea84e7::1753836339::res://.godot/exported/133200997/export-33564441279fd44351d02bc5c5995a0e-pistola.scn
+res://Scenes/armas/revolver.tscn::dc8e213a12188da4c58565aec437199a::1752698923::res://.godot/exported/133200997/export-da00a17b54c11607980ceca512919414-revolver.scn
+res://Scenes/armas/uzi.tscn::ec58d7d414cefd38ab57cdf610f7f4d1::1752698923::res://.godot/exported/133200997/export-a8f725d667bbc7dc3a69c306d7516c20-uzi.scn
+res://Scenes/balum.tscn::8b746318f1e78229a0d3b1965c1d16dd::1753836339::res://.godot/exported/133200997/export-cbd0e91721b03431c58f4067ecf8d096-balum.scn
+res://Scenes/bullet.tscn::ceea8bbd82823c6bc890b692c0bac83c::1752698923::res://.godot/exported/133200997/export-ebb3521b4f0ab2fc80eef1183e18e924-bullet.scn
+res://Scenes/folhas.tscn::ddedf034fe03197ec878c1e54745a899::1752698923::res://.godot/exported/133200997/export-a4ce229f1850bbcfe34a57e8d4849350-folhas.scn
+res://Scenes/game.tscn::68f8fafcd9ac9b7d622c043150003416::1753836556::res://.godot/exported/133200997/export-d45e16ca8d170891778b9dcfa9c69e68-game.scn
+res://Scenes/hud.tscn::1c0030d65513c7376a445fcdb451691d::1753836339::res://.godot/exported/133200997/export-885e17d6a23b453de5b281f1a900d8bb-hud.scn
+res://Scenes/killzone.tscn::ec3a18db85a11c52fdfe0dfcb72b8c90::1752698923::res://.godot/exported/133200997/export-d1af5ecceb7d635322ae60fe36e3ac29-killzone.scn
+res://Scenes/macaco.tscn::3d958a525bd7c5761050da4cdbc9f15e::1752698923::res://.godot/exported/133200997/export-9321387dfc66a7a25d8df2dea97fff8b-macaco.scn
+res://Scenes/main_menu.tscn::4aad32a97240049944e32214256c1168::1753836339::res://.godot/exported/133200997/export-502e6a9b269597544b234abf28958cd8-main_menu.scn
+res://Scenes/death_screen.tscn::9aa08bc97e36b23d44c93b7386eae52e::1753836339::res://.godot/exported/133200997/export-1723bcdcd4c84eb838c396c928e9efc8-death_screen.scn
