@@ -19,11 +19,7 @@ O jogador começa com 3 vidas. Ao tomar dano, Balum muda de cor para indicar o e
 - Mouse esquerdo: atirar
 
 ## Como jogar
+Vá na aba releases e baixe a versão correspondente ao seu sistema operacional.
 
-### Windows
-
-Baixe o executável mais recente na aba Releases do repositório e execute.
-
-### Linux
-
-...
+**Windows:** Unpoppable.exe
+**Linux:** Unpoppable.x86_64
