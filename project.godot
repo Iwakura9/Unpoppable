@@ -33,6 +33,10 @@ window/stretch/aspect="expand"
 macaco=""
 Player=""
 
+[gui]
+
+theme/custom="res://Assets/ui_theme.tres"
+
 [input]
 
 up={
