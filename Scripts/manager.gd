@@ -111,6 +111,7 @@ func show_round(round) -> void:
 	round_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	round_label.add_theme_color_override("font_color", Color.RED)
 	round_label.add_theme_font_size_override("font_size", 64)
+	round_label.add_theme_constant_override("outline_size", 12)
 	var font = load("res://Assets/Fonts/alagard/alagard.ttf")
 	round_label.add_theme_font_override("font", font)
 	
