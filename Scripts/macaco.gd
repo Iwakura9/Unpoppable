@@ -20,7 +20,28 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 		
 		animate(direction)
-		
+	elif not morreu:
+		wander(_delta)
+
+# Sem jogador (menu principal): anda numa direção aleatória, para, repete.
+var wander_dir := Vector2.ZERO
+var wander_time := 0.0
+
+func wander(delta: float) -> void:
+	wander_time -= delta
+	if wander_time <= 0:
+		if wander_dir == Vector2.ZERO:
+			wander_dir = Vector2.from_angle(randf() * TAU)
+			wander_time = randf_range(1.0, 3.5)
+		else:
+			wander_dir = Vector2.ZERO
+			wander_time = randf_range(1.0, 4.0)
+			sprite.stop()
+	if wander_dir != Vector2.ZERO:
+		velocity = wander_dir * speed * 0.5
+		move_and_slide()
+		animate(wander_dir)
+
 func animate(direction: Vector2) -> void:
 	# Pega o angulo do vetor direção e converte para graus.
 	var angle: float = atan2(direction.y, direction.x)
